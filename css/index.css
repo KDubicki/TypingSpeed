@@ -1,0 +1,27 @@
+@import url("./basic.css");
+@import url("./keyframes.css");
+
+h1 {
+    animation: slideFromLeft 0.7s linear;
+}
+
+p {
+    animation: slideFromRight 0.7s linear;
+}
+
+.start-btn {
+    animation: start-btn 1s linear;
+}
+
+.start-btn:hover {
+    background-color: #E37300;
+}
+
+.setting-btn {
+    animation: setting-btn 1.4s linear;
+}
+
+.setting-btn:hover {
+    transition-duration: 1s;
+    transform: rotate(180deg);
+}

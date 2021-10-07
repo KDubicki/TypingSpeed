@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: #1B1A17;
+}
+
+p {
+    font-size: 0.9rem;
+}
+
+.container {
+    width: 100vw;
+    max-width: 1920px;
+    height: 100vh;
+
+    color: #F9F9F9;
+    line-height: 1.5rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    font-size: 3rem;
+    padding: 0.5rem 0.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.buttonsWrapper {
+    width: auto;
+    height: auto;
+    display: flex;
+    margin-top: 2.5rem;
+}
+
+button {
+    padding: 8px 32px;
+    margin: 0.5em;
+
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+
+    border: none;
+    border-radius: 1rem;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.primary-btn {
+    background: #FF8303;
+    color: #F9F9F9;
+}
+
+.start-btn {
+    height: 40px;
+    font-size: 1.2rem;
+}
+
+.setting-btn {
+    background: #999999;
+    border-radius: 50%;
+    padding: 2px;
+    height: 40px;
+    width: 40px;
+}
+
