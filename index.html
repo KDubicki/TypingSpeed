@@ -6,21 +6,47 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;900&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>Typing Speed</title>
 </head>
 <body>
-<div class="container">
-    <h1>Hello in my typing speed app</h1>
-    <p>I create this app as a training in HTML, CSS and JavaScript</p>
-    <p>Have fun checking your speed</p>
+<div class="hello">
+    <h2 class="hello__header">Hello in my typing speed app</h2>
+    <p class="hello__info">I create this app as a training in HTML, CSS and JavaScript</p>
+    <p class="hello__info">Have fun checking your speed</p>
 
-    <div class="buttonsWrapper">
-        <button class="primary-btn  start-btn">Start</button>
-        <button class="setting-btn">
-            <img src="https://img.icons8.com/material-outlined/24/000000/settings--v3.png" alt="setting icon"/>
+    <div class="hello__buttons">
+        <button class="hello__button btn__primary" type="button">Start</button>
+        <button class="hello__button btn__settings" type="button">
+            <img class="settings__img" src="https://img.icons8.com/material-outlined/24/000000/settings--v3.png" alt="setting icon"/>
         </button>
     </div>
 </div>
+
+<!--<div class="modal setting">-->
+<!--    <header>-->
+<!--        <h2>Setting</h2>-->
+<!--    </header>-->
+<!--    <form>-->
+<!--        <div class="form-example">-->
+<!--            <label for="time-select">Choose you time:</label>-->
+<!--            <div>-->
+<!--                <input id="time-select" name="time-select" type="number" />-->
+<!--                <span>m</span>-->
+<!--            </div>-->
+<!--        </div>-->
+
+<!--        <div class="form-example">-->
+<!--            <label for="color-select">Choose basic color:</label>-->
+<!--            <input id="color-select" name="color-select" type="color" />-->
+<!--        </div>-->
+<!--    </form>-->
+<!--    <div class="modal__footer">-->
+<!--        <button class="btn-tertiary">Reset</button>-->
+<!--        <button class="btn-secondary">Close</button>-->
+<!--    </div>-->
+<!--</div>-->
+
+
 </body>
 </html>
