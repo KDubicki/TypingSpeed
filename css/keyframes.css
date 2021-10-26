@@ -1,18 +1,18 @@
-@keyframes slideFromLeft {
+@keyframes hello__slide-to-right {
     0% {
         opacity: 0;
         transform: translateX(-10vw);
     }
 }
 
-@keyframes slideFromRight {
+@keyframes hello__slide-to-left {
     0% {
         opacity: 0;
         transform: translateX(10vw);
     }
 }
 
-@keyframes start-btn {
+@keyframes hello__slide-to-top {
     0% {
         opacity: 0;
         transform: translateY(10vw);
@@ -22,13 +22,13 @@
     }
 }
 
-@keyframes setting-btn {
+@keyframes hello__btn-setting {
     0% {
         opacity: 0;
-        transform: translateX(-10px);
+        transform: translateX(-0.8em);
     }
     70% {
         opacity: 0;
-        transform: translateX(-30px) rotate(180deg);
+        transform: translateX(-1.6em) rotate(180deg);
     }
 }

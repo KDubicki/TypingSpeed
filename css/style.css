@@ -1,0 +1,59 @@
+@import url("./variables.css");
+@import url("./keyframes.css");
+@import url("hello.css");
+/*@import url("./modal.css");*/
+
+.btn {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    padding: 0.5em 1.5em;
+    border: 0;
+    border-radius: 1rem;
+}
+
+.btn-primary {
+    color: var(--white);
+    background-color: var(--orange);
+}
+
+.btn-settings {
+    cursor: pointer;
+
+    background-color: var(--grey);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 0;
+    border-radius: 50%;
+    padding: 0.4em;
+}
+
+/*h1 {*/
+/*    animation: slideFromLeft 0.7s linear;*/
+/*}*/
+
+/*p {*/
+/*    animation: slideFromRight 0.7s linear;*/
+/*}*/
+
+/*.start-btn {*/
+/*    animation: start-btn 1s linear;*/
+/*}*/
+
+/*.start-btn:hover {*/
+/*    background-color: #E37300;*/
+/*}*/
+
+/*.setting-btn {*/
+/*    animation: setting-btn 1.4s linear;*/
+/*}*/
+
+/*.setting-btn:hover {*/
+/*    transition-duration: 1s;*/
+/*    transform: rotate(180deg);*/
+/*}*/
