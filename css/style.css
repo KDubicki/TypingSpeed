@@ -1,6 +1,6 @@
 @import url("./variables.css");
 @import url("./keyframes.css");
-@import url("hello.css");
+@import url("./hello.css");
 /*@import url("./modal.css");*/
 
 .btn {
@@ -19,6 +19,10 @@
     background-color: var(--orange);
 }
 
+.btn-primary:hover {
+    background-color: var(--dark-orange);
+}
+
 .btn-settings {
     cursor: pointer;
 
@@ -33,27 +37,7 @@
     padding: 0.4em;
 }
 
-/*h1 {*/
-/*    animation: slideFromLeft 0.7s linear;*/
-/*}*/
-
-/*p {*/
-/*    animation: slideFromRight 0.7s linear;*/
-/*}*/
-
-/*.start-btn {*/
-/*    animation: start-btn 1s linear;*/
-/*}*/
-
-/*.start-btn:hover {*/
-/*    background-color: #E37300;*/
-/*}*/
-
-/*.setting-btn {*/
-/*    animation: setting-btn 1.4s linear;*/
-/*}*/
-
-/*.setting-btn:hover {*/
-/*    transition-duration: 1s;*/
-/*    transform: rotate(180deg);*/
-/*}*/
+.btn-settings:hover {
+    transition-duration: 1s;
+    transform: rotate(180deg);
+}
