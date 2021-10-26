@@ -1,0 +1,95 @@
+.game {
+    /*filter: blur(1rem);*/
+
+    height: 90vh;
+    width: 80vw;
+    font-size: 1.5rem;
+    padding: 5vh 10vw;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.game__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.game__title {
+    opacity: 0.8;
+}
+
+.game__timer {
+    color: var(--orange);
+    font-size: 1.5em;
+    font-weight: bold;
+    padding: 0.3em 0.75em;
+
+    border: 0.3rem solid var(--orange);
+    border-radius: 1em;
+}
+
+.game__text {
+    max-width: 75ch;
+    margin: auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.game__line {
+    font-size: 1.6rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.game__keyboard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.game__button {
+    height: calc((70vw / 20));
+
+    color: var(--orange);
+    background-color: var(--dark);
+
+    padding: 0.3rem;
+    margin-bottom: 0.4rem;
+    border: 0.3rem solid var(--orange);
+    border-radius: 0.3em;
+
+    font-size: 1.6rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.game__button-s05 {
+    width: calc((80vw / 20) / 2);
+}
+
+.game__button-s1 {
+    width: calc((70vw / 20));
+}
+
+.game__button-s15 {
+    width: calc((70vw / 20) * 1.5);
+}
+
+.game__button-s2 {
+    width: calc((70vw / 20) * 2);
+}
+
+.game__button-s25 {
+    width: calc((70vw / 20) * 2.5);
+}
+
+.game__button-space{
+    width: calc((70vw / 20) * 4);
+}
