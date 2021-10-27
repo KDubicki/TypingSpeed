@@ -70,6 +70,13 @@
     cursor: pointer;
 }
 
+.game__button:hover {
+    color: var(--dark);
+    background-color: var(--orange);
+    border-color: var(--dark-orange);
+    box-shadow: inset 2rem 2rem 3rem var(--dark-orange);
+}
+
 .game__button-s05 {
     width: calc((80vw / 20) / 2);
 }
