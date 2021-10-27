@@ -32,6 +32,10 @@
 }
 
 .game__text {
+    font-size: 1.6rem;
+    font-weight: bold;
+    text-align: center;
+
     max-width: 75ch;
     margin: auto;
 
@@ -39,12 +43,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-}
-
-.game__line {
-    font-size: 1.6rem;
-    font-weight: bold;
-    text-align: center;
 }
 
 .game__keyboard {
