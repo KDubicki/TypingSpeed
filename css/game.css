@@ -31,7 +31,9 @@
     border-radius: 1em;
 }
 
-.game__text {
+.game__board {
+    /*padding: 1rem;*/
+
     font-size: 1.6rem;
     font-weight: bold;
     text-align: center;
@@ -39,10 +41,40 @@
     max-width: 75ch;
     margin: auto;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    /*display: flex;*/
+    /*flex-direction: column;*/
+    /*align-items: center;*/
+    /*justify-content: center;*/
+    position: relative;
+}
+
+.game__board:before {
+    content: " ";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 9rem;
+    height: 1rem;
+    box-shadow: 0 0 0.5rem 0.5rem var(--dark);
+}
+
+.game__board:after {
+    content: " ";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 1rem;
+    transform: translateY(1rem);
+    box-shadow: 0 -0.7rem 2rem 3rem var(--dark);
+    z-index: 99;
+}
+
+.game__text {
+    line-height: 2rem;
+    height: 8rem;
+    overflow-y: hidden;
+    padding-top: 1rem;
 }
 
 .game__keyboard {

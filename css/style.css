@@ -20,7 +20,6 @@ body {
 }
 
 .btn {
-    font-family: 'Montserrat', sans-serif;
     font-weight: 700;
 
     cursor: pointer;
@@ -56,4 +55,8 @@ body {
 .btn-settings:hover {
     transition-duration: 1s;
     transform: rotate(180deg);
+}
+
+.font-normal {
+    font-size: 1rem;
 }
