@@ -15,6 +15,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    z-index: 3;
 }
 
 .game__title {
@@ -33,10 +34,8 @@
 
 .game__board {
     /*padding: 1rem;*/
-
-    font-size: 1.6rem;
-    font-weight: bold;
-    text-align: center;
+    height: 8rem;
+    overflow-y: hidden;
 
     max-width: 75ch;
     margin: auto;
@@ -46,6 +45,7 @@
     /*align-items: center;*/
     /*justify-content: center;*/
     position: relative;
+    z-index: 1;
 }
 
 .game__board:before {
@@ -56,6 +56,7 @@
     bottom: 9rem;
     height: 1rem;
     box-shadow: 0 0 0.5rem 0.5rem var(--dark);
+    z-index: 2;
 }
 
 .game__board:after {
@@ -67,13 +68,15 @@
     height: 1rem;
     transform: translateY(1rem);
     box-shadow: 0 -0.7rem 2rem 3rem var(--dark);
-    z-index: 99;
+    z-index: 2;
 }
 
 .game__text {
-    line-height: 2rem;
-    height: 8rem;
-    overflow-y: hidden;
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-align: center;
+
+    line-height: 1.6rem;
     padding-top: 1rem;
 }
 
@@ -82,6 +85,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    z-index: 3;
 }
 
 .game__button {
