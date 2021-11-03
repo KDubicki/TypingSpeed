@@ -88,19 +88,22 @@
     z-index: 3;
 }
 
+.game__keyboard-line {
+    display: flex;
+}
+
 .game__button {
     height: calc((70vw / 20));
 
     color: var(--orange);
     background-color: var(--dark);
-
-    padding: 0.3rem;
-    margin-bottom: 0.4rem;
     border: 0.3rem solid var(--orange);
-    border-radius: 0.3em;
+    border-radius: 0.3rem;
 
     font-size: 1.6rem;
     font-weight: bold;
+    line-height: 2rem;
+    margin: 0.1rem;
     cursor: pointer;
 }
 
