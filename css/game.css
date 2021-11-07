@@ -34,7 +34,7 @@
 
 .game__board {
     /*padding: 1rem;*/
-    height: 8rem;
+    height: 9rem;
     overflow-y: hidden;
 
     max-width: 75ch;
