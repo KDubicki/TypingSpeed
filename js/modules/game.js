@@ -7,6 +7,7 @@ export const status = () => timer.active
 
 export const stop = () => {
     keyboard.off()
+    keyboard.clearButtons()
 
     document.removeEventListener('keyup', buttonUp)
     document.removeEventListener('keydown', buttonDown)
@@ -22,9 +23,7 @@ export const start = time => {
 }
 
 const buttonDown = e => {
-    if (keyboard.keyDown(e.code)) {
-
-    }
+    if (keyboard.keyDown(e.code)) {}
 }
 
 const buttonUp = e => {

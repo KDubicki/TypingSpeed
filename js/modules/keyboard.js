@@ -11,6 +11,11 @@ colors['darkOrange'] = '#ff6d00'
 export const on = () => keyboardActive = true
 export const off = () => keyboardActive = false
 
+export const clearButtons = () => {
+    const buttons = keyboard.querySelectorAll('button')
+    buttons.forEach(button => button.classList.remove('game__button-active'))
+}
+
 const changeButtonColor = (button, color, time) => {
     let keyframe = [{
         color: color[0],
@@ -37,7 +42,7 @@ const animateButtonUp = button => {
     const color = [colors['orange'], colors['dark'], colors['dark']]
     changeButtonColor(button, color, changeTime)
     setTimeout(() => {
-        button.classList.remove("game__button-active")
+        button.classList.remove('game__button-active')
     }, changeTime)
 }
 
@@ -51,10 +56,10 @@ export const keyDown = code => {
 }
 
 export const keyUp = code => {
-    if (!(keyboardActive && key[code] === true)) return;
+    if (!(keyboardActive && key[code] === true)) return
 
     key[code] = false
     const button = keyboard.querySelector('[code="' + code + '"]')
     animateButtonUp(button)
-    button.classList.remove("game__button-active")
+    button.classList.remove('game__button-active')
 }
