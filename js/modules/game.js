@@ -5,10 +5,28 @@ import * as keyboard from './keyboard.js'
 
 export const status = () => timer.active
 
-export const stop = () => keyboard.off()
+export const stop = () => {
+    keyboard.off()
+
+    document.removeEventListener('keyup', buttonUp)
+    document.removeEventListener('keydown', buttonDown)
+}
 
 export const start = time => {
     timer.setTime(time)
     keyboard.on()
     timer.start()
+
+    document.addEventListener('keyup', buttonUp)
+    document.addEventListener('keydown', buttonDown)
+}
+
+const buttonDown = e => {
+    if (keyboard.keyDown(e.code)) {
+
+    }
+}
+
+const buttonUp = e => {
+    keyboard.keyUp(e.code)
 }

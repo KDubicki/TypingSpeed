@@ -19,8 +19,9 @@ const calcTime = () => {
 }
 
 const timerUpdate = () => {
-    timer.textContent = calcTime()
     let newColor = `hsl(${ color }, 100%, 50%)`
+
+    timer.textContent = calcTime()
     timer.style.color = newColor
     timer.style.borderColor = newColor
     color = (time / basicTime) * basicColor

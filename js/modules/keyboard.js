@@ -4,32 +4,52 @@ let keyboardActive = false
 const key = []
 
 //Functions
-const animateButtonDown = () => {
-    console.log('Animation Down')
+export const on = () => keyboardActive = true
+export const off = () => keyboardActive = false
+
+const changeButtonStyle = (button) => {
+    const changeTime = 600
+    let styles = [{
+        color: '#1B1A17',
+        background: '#ff7900',
+        borderColor: '#ff6d00',
+        boxShadow: `inset 2rem 2rem 3rem #ff6d00`
+    }]
+
+    button.animate(styles, {
+        duration: changeTime,
+    })
+    setTimeout(() => {
+        button.style.color = '#1B1A17'
+        button.style.background = '#ff7900'
+        button.style.borderColor = '#ff6d00'
+        button.style.boxShadow = `inset 2rem 2rem 3rem #ff6d00`
+    }, changeTime - 50)
 }
 
-const keyDown = e => {
-    if (keyboardActive && key[e.code]) return;
+const animateButtonDown = code => {
+    const querySelector = '[code="' + code + '"]'
+    const button = keyboard.querySelector(querySelector)
+    changeButtonStyle(button, 'red', 'green')
+}
 
-    key[e.code] = true
-    animateButtonDown()
+export const keyDown = code => {
+    if (!(keyboardActive && key[code] !== true)) return false
+    console.log(code)
+    key[code] = true
+    animateButtonDown(code)
+    return true
 }
 
 const animateButtonUp = () => {
-    console.log('Animation Up')
 }
 
-const keyUp = e => {
-    if (keyboardActive && !key[e.code]) return;
+export const keyUp = code => {
+    if (!(keyboardActive && key[code] === true)) return;
 
-    key[e.code] = false
+    key[code] = false
     animateButtonUp()
 }
 
-export const off = () => keyboardActive = false
-export const on = () => keyboardActive = true
 
-//Events
-document.addEventListener('keydown', keyDown)
-document.addEventListener('keyup', keyUp)
 
