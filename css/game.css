@@ -11,6 +11,11 @@
     justify-content: space-between;
 }
 
+.game-cursor_disabled {
+    cursor: none;
+    pointer-events: none;
+}
+
 .game__header {
     display: flex;
     align-items: center;
@@ -104,14 +109,6 @@
     font-weight: bold;
     line-height: 2rem;
     margin: 0.1rem;
-    cursor: pointer;
-}
-
-.game__button:hover {
-    color: var(--dark);
-    background-color: var(--orange);
-    border-color: var(--dark-orange);
-    box-shadow: inset 2rem 2rem 3rem var(--dark-orange);
 }
 
 .game__button-active {

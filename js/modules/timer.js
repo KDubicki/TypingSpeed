@@ -29,9 +29,10 @@ const timerUpdate = () => {
     time <= 0 ? stopTimer() : time--
 }
 
-export const setTime = newTime => {
+export const setTime = (newTime = 0) => {
     basicTime = newTime
     time = newTime
+    timerUpdate()
 }
 
 export const start = () => {

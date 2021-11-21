@@ -8,10 +8,15 @@ colors['orange'] = '#ff7900'
 colors['darkOrange'] = '#ff6d00'
 
 //Functions
-export const on = () => keyboardActive = true
-export const off = () => keyboardActive = false
+const keyboardActivity = status => {
+    keyboardActive = status
+    clearButtons()
+}
 
-export const clearButtons = () => {
+export const on = () => keyboardActivity(true)
+export const off = () => keyboardActivity(false)
+
+const clearButtons = () => {
     const buttons = keyboard.querySelectorAll('button')
     buttons.forEach(button => button.classList.remove('game__button-active'))
 }
