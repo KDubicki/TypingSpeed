@@ -2,7 +2,9 @@ import * as timer from './timer.js'
 import * as keyboard from './keyboard.js'
 // import * as text from './text.js'
 
-export const status = () => timer.active
+let handlerTimeInterval = null
+
+const isPlaying = () => timer.active ? timer.update() : stop()
 
 export const stop = () => {
     document.removeEventListener('keyup', buttonUp)
@@ -10,7 +12,8 @@ export const stop = () => {
 
     cursorActivity()
     keyboard.off()
-    timer.setTime(0)
+    clearInterval(handlerTimeInterval)
+    timer.stop()
 }
 
 const cursorActivity = () => {
@@ -19,11 +22,12 @@ const cursorActivity = () => {
 }
 
 export const start = time => {
-    timer.setTime(time)
     keyboard.on()
+    timer.setTime(time)
     timer.start()
-    cursorActivity()
+    handlerTimeInterval = setInterval(isPlaying, 1000)
 
+    cursorActivity()
     document.addEventListener('keyup', buttonUp)
     document.addEventListener('keydown', buttonDown)
 }
