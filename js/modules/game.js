@@ -1,6 +1,6 @@
 import * as timer from './timer.js'
 import * as keyboard from './keyboard.js'
-// import * as text from './text.js'
+import * as text from './text.js'
 
 const game = document.querySelector('.game')
 let handlerTimeInterval = null
@@ -12,6 +12,7 @@ const isPlaying = () => {
 }
 
 export const start = time => {
+    text.on()
     keyboard.on()
     timer.start(time)
     cursorActivity()

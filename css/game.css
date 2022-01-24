@@ -85,6 +85,10 @@
     padding-top: 1rem;
 }
 
+.game__text span {
+    color: grey;
+}
+
 .game__keyboard {
     display: flex;
     flex-direction: column;
