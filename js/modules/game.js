@@ -2,40 +2,29 @@ import * as timer from './timer.js'
 import * as keyboard from './keyboard.js'
 // import * as text from './text.js'
 
+const game = document.querySelector('.game')
 let handlerTimeInterval = null
 
-const isPlaying = () => timer.active ? timer.update() : stop()
-
-export const stop = () => {
-    document.removeEventListener('keyup', buttonUp)
-    document.removeEventListener('keydown', buttonDown)
-
-    cursorActivity()
-    keyboard.off()
-    clearInterval(handlerTimeInterval)
-    timer.stop()
-}
-
-const cursorActivity = () => {
-    const game = document.querySelector('.game')
-    game.classList.toggle('game-cursor_disabled')
+const isPlaying = () => {
+    timer.active
+        ? timer.update()
+        : stop()
 }
 
 export const start = time => {
     keyboard.on()
-    timer.setTime(time)
-    timer.start()
-    handlerTimeInterval = setInterval(isPlaying, 1000)
-
+    timer.start(time)
     cursorActivity()
-    document.addEventListener('keyup', buttonUp)
-    document.addEventListener('keydown', buttonDown)
+    handlerTimeInterval = setInterval(isPlaying, 1000)
 }
 
-const buttonDown = e => {
-    if (keyboard.keyDown(e.code)) {}
+export const stop = () => {
+    keyboard.off()
+    timer.stop()
+    cursorActivity()
+    clearInterval(handlerTimeInterval)
 }
 
-const buttonUp = e => {
-    keyboard.keyUp(e.code)
+const cursorActivity = () => {
+    game.classList.toggle('game-cursor_disabled')
 }

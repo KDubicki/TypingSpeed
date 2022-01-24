@@ -1,20 +1,28 @@
-//Variables
 const keyboard = document.querySelector('.game__keyboard')
-let keyboardActive = false
+let isActive = false
 const key = []
-const colors = []
-colors['dark'] = '#1B1A17'
-colors['orange'] = '#ff7900'
-colors['darkOrange'] = '#ff6d00'
+const colors = {
+    dark: '#1B1A17',
+    orange: '#ff7900',
+    darkOrange: '#ff6d00',
+}
 
-//Functions
-const keyboardActivity = status => {
-    keyboardActive = status
+const keyboardActivity = () => {
+    isActive = !isActive
     clearButtons()
 }
 
-export const on = () => keyboardActivity(true)
-export const off = () => keyboardActivity(false)
+export const on = () => {
+    keyboardActivity()
+    document.addEventListener('keyup', keyUp)
+    document.addEventListener('keydown', keyDown)
+}
+
+export const off = () => {
+    document.removeEventListener('keyup', keyUp)
+    document.removeEventListener('keydown', keyDown)
+    keyboardActivity()
+}
 
 const clearButtons = () => {
     const buttons = keyboard.querySelectorAll('button')
@@ -28,14 +36,12 @@ const changeButtonColor = (button, color, time) => {
         boxShadow: `inset 2rem 2rem 3rem ${ color[2] }`
     }]
 
-    button.animate(keyframe, {
-        duration: time,
-    })
+    button.animate(keyframe, { duration: time })
 }
 
 const animateButtonDown = button => {
     const changeTime = 300
-    const color = [colors['dark'], colors['orange'], colors['darkOrange']]
+    const color = [colors.dark, colors.orange, colors.darkOrange]
     changeButtonColor(button, color, changeTime)
     setTimeout(() => {
         button.classList.add("game__button-active")
@@ -44,27 +50,28 @@ const animateButtonDown = button => {
 
 const animateButtonUp = button => {
     const changeTime = 300
-    const color = [colors['orange'], colors['dark'], colors['dark']]
+    const color = [colors.orange, colors.dark, colors.dark]
     changeButtonColor(button, color, changeTime)
     setTimeout(() => {
         button.classList.remove('game__button-active')
     }, changeTime)
 }
 
-export const keyDown = code => {
-    if (!(keyboardActive && key[code] !== true)) return false
+const keyDown = e => {
+    const code = e.code
+    if (!(isActive && key[code] !== true)) return
 
     key[code] = true
-    const button = keyboard.querySelector('[code="' + code + '"]')
+    const button = keyboard.querySelector(`[code="${ code }"]`)
     animateButtonDown(button)
-    return true
 }
 
-export const keyUp = code => {
-    if (!(keyboardActive && key[code] === true)) return
+const keyUp = e => {
+    const code = e.code
+    if (!(isActive && key[code] === true)) return
 
     key[code] = false
-    const button = keyboard.querySelector('[code="' + code + '"]')
+    const button = keyboard.querySelector(`[code="${ code }"]`)
     animateButtonUp(button)
     button.classList.remove('game__button-active')
 }
