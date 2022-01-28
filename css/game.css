@@ -41,7 +41,6 @@
     /*padding: 1rem;*/
     height: 9rem;
     overflow-y: hidden;
-
     max-width: 75ch;
     margin: auto;
 
@@ -83,10 +82,19 @@
 
     line-height: 1.6rem;
     padding-top: 1rem;
+
+    height: 6rem;
+
+    overflow: hidden;
 }
 
 .game__text span {
     color: grey;
+}
+
+textarea {
+    height: 0;
+    opacity: 0;
 }
 
 .game__keyboard {
@@ -144,4 +152,14 @@
 
 .game__button-space{
     width: calc((70vw / 20) * 4);
+}
+
+.correct {
+    color: white !important;
+    font-size: calc(1em + 2px);
+}
+
+.incorrect {
+    color: red !important;
+    font-size: calc(1em + 2px);
 }
