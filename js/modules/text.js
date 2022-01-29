@@ -6,16 +6,15 @@ const API_URL = 'https://api.quotable.io/random?minLength=60&maxLength=75'
 let rowsLength = []
 let isActive = false
 
-const changeStatus = () => isActive = !isActive
 const textareaFocus = () => textarea.focus()
 
 export const on = () => {
     clear()
-    for (let i = 0; i < 100; i++) renderNewRow()
+    for (let i = 0; i < 100; i++) renderNewRow();
     textarea.addEventListener('input', checkerText)
     document.addEventListener('click', textareaFocus)
     textareaFocus()
-    changeStatus()
+    isActive = true;
 }
 
 const clear = () => {
@@ -26,16 +25,21 @@ const clear = () => {
 
 const renderNewRow = async () => {
     const row = await getRandomQuart()
+    addNewRow(row);
 
-    text.innerHTML += `
-        <p>
-            <a href="#${ rowsLength.length }"></a>
-            <span>${ [...row].join('</span><span>') }</span>
+    let elem = rowsLength[rowsLength.length - 1] || 0;
+    rowsLength[rowsLength.length] = parseInt(elem + row.length + 1);
+}
+
+const addNewRow = row => {
+    text.innerHTML += `<p>
+        <a href="#${rowsLength.length}"></a>
+        <span>${[...row].join('</span><span>')}</span>
+        <span>
+        
+</span>
         </p>
     `
-
-    let firstElem = rowsLength[rowsLength.length - 1] || 0;
-    rowsLength[rowsLength.length] = parseInt(firstElem + row.length);
 }
 
 const getRandomQuart = () => {
@@ -68,11 +72,13 @@ const scroll = len => {
     })
 
     text.scroll({
-        top: `${ position * 32 }`,
+        top: position * 32,
         behavior: 'smooth'
     });
 }
 
 export const off = () => {
-    // document.removeEventListener('click')
+    isActive = false;
+    textarea.removeEventListener('input', checkerText);
+    document.removeEventListener('click', textareaFocus);
 }

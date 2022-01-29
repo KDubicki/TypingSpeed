@@ -8,7 +8,7 @@ let handlerTimeInterval = null
 const isPlaying = () => {
     timer.active
         ? timer.update()
-        : stop()
+        : stop();
 }
 
 export const start = time => {
@@ -21,6 +21,7 @@ export const start = time => {
 
 export const stop = () => {
     // keyboard.off()
+    text.off();
     timer.stop()
     cursorActivity()
     clearInterval(handlerTimeInterval)
