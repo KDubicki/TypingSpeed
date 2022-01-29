@@ -59,7 +59,7 @@
     right: 0;
     bottom: 9rem;
     height: 1rem;
-    box-shadow: 0 0 0.5rem 0.5rem var(--dark);
+    box-shadow: 0 0.8rem 1rem 2rem var(--dark);
     z-index: 2;
 }
 
@@ -90,6 +90,10 @@
 
 .game__text span {
     color: grey;
+}
+
+.game__text p {
+    height: 2rem;
 }
 
 textarea {

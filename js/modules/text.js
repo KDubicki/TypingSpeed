@@ -11,7 +11,7 @@ const textareaFocus = () => textarea.focus()
 
 export const on = () => {
     clear()
-    for (let i = 0; i < 5; i++) renderNewRow()
+    for (let i = 0; i < 100; i++) renderNewRow()
     textarea.addEventListener('input', checkerText)
     document.addEventListener('click', textareaFocus)
     textareaFocus()
@@ -26,14 +26,16 @@ const clear = () => {
 
 const renderNewRow = async () => {
     const row = await getRandomQuart()
-    const fullLength = rowsLength[rowsLength.length - 1] + row.length
-    rowsLength = [...rowsLength, fullLength]
 
     text.innerHTML += `
         <p>
+            <a href="#${ rowsLength.length }"></a>
             <span>${ [...row].join('</span><span>') }</span>
         </p>
     `
+
+    let firstElem = rowsLength[rowsLength.length - 1] || 0;
+    rowsLength[rowsLength.length] = parseInt(firstElem + row.length);
 }
 
 const getRandomQuart = () => {
@@ -45,7 +47,7 @@ const getRandomQuart = () => {
 const checkerText = async () => {
     if (!isActive) return;
 
-    const characters = text.querySelectorAll('span')
+    const characters = text.querySelectorAll('span');
     const userText = textarea.value;
     characters.forEach((ch, index) => {
         if (index >= userText.length) ch.classList.remove('correct', 'incorrect');
@@ -55,6 +57,20 @@ const checkerText = async () => {
                 : 'incorrect';
         }
     })
+
+    scroll(userText.length);
+}
+
+const scroll = len => {
+    let position = 0;
+    rowsLength.forEach(row => {
+        if (len >= row) position++;
+    })
+
+    text.scroll({
+        top: `${ position * 32 }`,
+        behavior: 'smooth'
+    });
 }
 
 export const off = () => {

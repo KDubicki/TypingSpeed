@@ -30,13 +30,13 @@ const clearButtons = () => {
 }
 
 const changeButtonColor = (button, color, time) => {
-    let keyframe = [{
-        color: color[0],
-        background: color[1],
-        boxShadow: `inset 2rem 2rem 3rem ${ color[2] }`
-    }]
+    // let keyframe = [{
+    //     color: color[0],
+    //     background: color[1],
+    //     boxShadow: `inset 2rem 2rem 3rem ${ color[2] }`
+    // }]
 
-    button.animate(keyframe, { duration: time })
+    // button.animate(keyframe, { duration: time })
 }
 
 const animateButtonDown = button => {
@@ -49,12 +49,12 @@ const animateButtonDown = button => {
 }
 
 const animateButtonUp = button => {
-    const changeTime = 300
-    const color = [colors.orange, colors.dark, colors.dark]
-    changeButtonColor(button, color, changeTime)
-    setTimeout(() => {
-        button.classList.remove('game__button-active')
-    }, changeTime)
+    // const changeTime = 300
+    // const color = [colors.orange, colors.dark, colors.dark]
+    // changeButtonColor(button, color, changeTime)
+    // setTimeout(() => {
+    //     button.classList.remove('game__button-active')
+    // }, changeTime)
 }
 
 const keyDown = e => {
