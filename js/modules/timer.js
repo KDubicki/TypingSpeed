@@ -1,5 +1,5 @@
 const timer = document.querySelector('.game__timer');
-export let active = false;
+export let isActive = false;
 let time = 0;
 let basicTime = 1;
 let color = 120;
@@ -8,7 +8,7 @@ const basicColor = 120;
 export const start = newTime => {
     basicTime = time = newTime;
     color = basicColor;
-    active = true;
+    isActive = true;
 }
 
 export const update = () => {
@@ -17,7 +17,7 @@ export const update = () => {
     timer.style.color = timer.style.borderColor = newColor;
     color = (time / basicTime) * basicColor;
 
-    active = !!time;
+    isActive = !!time;
     time --;
 }
 

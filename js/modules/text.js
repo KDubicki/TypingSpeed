@@ -82,3 +82,6 @@ export const off = () => {
     textarea.removeEventListener('input', checkerText);
     document.removeEventListener('click', textareaFocus);
 }
+
+export const getCorrent = () => text.querySelectorAll('.correct').length;
+export const getTotal = () => textarea.value.length;

@@ -2,7 +2,7 @@
 @import url("./keyframes.css");
 @import url("./hello.css");
 @import url("./game.css");
-/*@import url("./modal.css");*/
+@import url("./modal.css");
 
 * {
     margin: 0;

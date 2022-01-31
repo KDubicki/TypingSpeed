@@ -167,3 +167,7 @@ textarea {
     color: red !important;
     font-size: calc(1em + 2px);
 }
+
+.blur {
+    filter: blur(1rem);
+}
