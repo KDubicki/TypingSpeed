@@ -5,6 +5,7 @@ import * as result from './result.js'
 
 let time = 60;
 
+const welcomePage = document.querySelector('.hello');
 const game = document.querySelector('.game')
 let handlerTimeInterval = null
 
@@ -15,13 +16,31 @@ const isPlaying = () => {
 }
 
 export const start = () => {
+
+    welcomePage.classList.add('hidden');
+
     result.hide();
     text.on()
     // keyboard.on()
     timer.start(time)
     cursorActivity()
-    game.classList.remove('blur');
-    handlerTimeInterval = setInterval(isPlaying, 1000)
+
+    preparation();
+}
+
+
+const preparation = () => {
+    const preparations = document.querySelectorAll('.preparation');
+    preparations.forEach((elem, index) => {
+        let timeOut = 1000 + (1500 * index);
+        setTimeout(() => elem.classList.add('preparation--show'), timeOut);
+    });
+
+    timer.update();
+    setTimeout(() => {
+        handlerTimeInterval = setInterval(isPlaying, 1000);
+        game.classList.remove('blur', 'hidden');
+    }, 5500);
 }
 
 export const stop = () => {
