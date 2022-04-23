@@ -6,15 +6,15 @@ const API_URL = 'https://api.quotable.io/random?minLength=60&maxLength=75'
 let rowsLength = []
 let isActive = false
 
-const textareaFocus = () => textarea.focus()
+const focus = () => textarea.focus();
 
 export const on = () => {
     clear()
     for (let i = 0; i < 100; i++) renderNewRow();
     textarea.addEventListener('input', checkerText)
-    document.addEventListener('click', textareaFocus)
-    textareaFocus()
+    document.addEventListener('keydown', focus)
     isActive = true;
+    setTimeout(() => focus(), 30);
 }
 
 const clear = () => {
@@ -80,8 +80,9 @@ const scroll = len => {
 export const off = () => {
     isActive = false;
     textarea.removeEventListener('input', checkerText);
-    document.removeEventListener('click', textareaFocus);
+    document.removeEventListener('keydown', focus);
+    text.scroll({top: 0});
 }
 
-export const getCorrent = () => text.querySelectorAll('.correct').length;
+export const getCorrect = () => text.querySelectorAll('.correct').length;
 export const getTotal = () => textarea.value.length;

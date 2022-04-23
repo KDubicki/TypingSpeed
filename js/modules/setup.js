@@ -1,1 +1,2 @@
-export let time = 60
+export let time = 60;
+

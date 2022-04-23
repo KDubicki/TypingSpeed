@@ -1,56 +1,3 @@
-/*.modal {*/
-/*    color: var(--white);*/
-
-/*    opacity: 0;*/
-/*    width: auto;*/
-/*    height: auto;*/
-/*    padding: 10px;*/
-
-/*    background: var(--dark);*/
-/*    border: 1px solid var(--white);*/
-/*    border-radius: 8px;*/
-/*    box-shadow: rgba(255, 255, 255, 0.24) 0px 3px 8px;*/
-
-/*    position: absolute;*/
-/*    top: 40vh;*/
-/*    left: 50vw;*/
-/*    transform: translate(-50%, -50%);*/
-/*}*/
-
-/*.modal Header, form {*/
-/*    font-weight: 600;*/
-/*    line-height: 24px;*/
-
-/*    padding: 15px;*/
-/*}*/
-
-/*.modal form {*/
-
-/*}*/
-
-/*.modal__footer {*/
-/*    !*width: 100%;*!*/
-/*    padding: 1rem;*/
-
-/*    display: flex;*/
-/*    !*flex-direction: row;*!*/
-/*    justify-content: space-between;*/
-/*    align-items: center;*/
-/*}*/
-
-/*.form-example {*/
-/*    width: auto;*/
-
-/*    padding: 15px;*/
-/*    display: flex;*/
-/*    flex-direction: column;*/
-/*}*/
-
-/*#color-select {*/
-/*    width: auto;*/
-/*    border: 0;*/
-/*}*/
-
 .modal {
     color: var(--white);
     background: var(--dark);
@@ -99,4 +46,31 @@
 
 .modal__result {
     margin: 0.3rem 0.3rem 0.3rem 3rem;
+}
+
+.setting__form {
+    border-top: 1px solid var(--white);
+    border-bottom: 1px solid var(--white);
+
+    padding: 5%;
+}
+
+#time-select {
+    width: 4rem;
+}
+
+#color-select {
+    width: 2rem;
+    border: 0;
+
+}
+
+.form-example {
+    width: 100%;
+    min-height: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
 }

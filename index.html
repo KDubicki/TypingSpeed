@@ -12,7 +12,7 @@
     <script src="https://kit.fontawesome.com/fb0c07e28a.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <div class="hello hidden">
+    <div class="hello">
         <header class="hello__header hello__header--display">Hello in my typing speed app</header>
         <div class="hello__info-wrapper">
             <p class="hello__info hello__info--display">I create this app as a training in HTML, CSS and JavaScript</p>
@@ -20,16 +20,16 @@
         </div>
 
         <div class="hello__buttons-wrapper">
-            <button class="hello__button hello__button--display btn btn-primary" type="button">Start</button>
+            <button class="hello__button hello__button--display btn btn-primary start" type="button">Start</button>
             <button class="hello__button hello__button--rotate btn-settings" type="button">
                 <i class="fas fa-cog"></i>
             </button>
         </div>
     </div>
 
-    <span class="preparation">1</span>
-    <span class="preparation">2</span>
     <span class="preparation">3</span>
+    <span class="preparation">2</span>
+    <span class="preparation">1</span>
     <div class="game hidden">
         <header class="game__header">
             <h2 class="game__title">Typing Speed</h2>
@@ -105,29 +105,28 @@
         </div>
     </div>
 
-<!--<div class="modal setting">-->
-<!--    <header>-->
-<!--        <h2>Setting</h2>-->
-<!--    </header>-->
-<!--    <form>-->
-<!--        <div class="form-example">-->
-<!--            <label for="time-select">Choose you time:</label>-->
-<!--            <div>-->
-<!--                <input id="time-select" name="time-select" type="number" />-->
-<!--                <span>m</span>-->
-<!--            </div>-->
-<!--        </div>-->
+<div class="modal setting hidden">
+    <header class="modal__header">
+        <h2>Setting</h2>
+    </header>
+    <form class="setting__form">
+        <div class="form-example">
+            <label for="time-select">Choose you time:</label>
+            <div>
+                <input id="time-select" name="time-select" type="number" />
+                <span>seconds</span>
+            </div>
+        </div>
 
-<!--        <div class="form-example">-->
-<!--            <label for="color-select">Choose basic color:</label>-->
-<!--            <input id="color-select" name="color-select" type="color" />-->
-<!--        </div>-->
-<!--    </form>-->
-<!--    <div class="modal__footer">-->
-<!--        <button class="btn-tertiary">Reset</button>-->
-<!--        <button class="btn-secondary">Close</button>-->
-<!--    </div>-->
-<!--</div>-->
+        <div class="form-example">
+            <label for="color-select">Choose basic color:</label>
+            <input id="color-select" name="color-select" type="color" />
+        </div>
+    </form>
+    <div class="modal__footer">
+        <button class="btn btn-primary">Play</button>
+    </div>
+</div>
 
     <div class="modal result hidden">
         <header class="modal__header">
@@ -142,8 +141,10 @@
             <p class="modal__result">Total Time: 60s</p>
         </div>
         <footer class="modal__footer">
-            <button class="btn btn-primary">Play</button>
-            <button class="btn btn-setting">l</button>
+            <button class="btn btn-primary start">Play</button>
+            <button class="hello__button btn-settings">
+                <i class="fas fa-cog"></i>
+            </button>
         </footer>
     </div>
 

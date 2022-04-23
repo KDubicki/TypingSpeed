@@ -6,6 +6,7 @@
     font-size: 1.5rem;
     padding: 5vh 10vw;
 
+    position: absolute;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -127,7 +128,7 @@ textarea {
     margin: 0.1rem;
 }
 
-.game__button-active {
+.game__button--active {
     color: var(--dark);
     background-color: var(--orange);
     border-color: var(--dark-orange);
