@@ -29,10 +29,7 @@
 
 }
 
-.modal__game {
-    border-top: 1px solid var(--white);
-    border-bottom: 1px solid var(--white);
-
+.modal__game, .setting__form {
     padding: 5%;
 }
 
@@ -46,13 +43,6 @@
 
 .modal__result {
     margin: 0.3rem 0.3rem 0.3rem 3rem;
-}
-
-.setting__form {
-    border-top: 1px solid var(--white);
-    border-bottom: 1px solid var(--white);
-
-    padding: 5%;
 }
 
 #time-select {
