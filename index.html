@@ -8,10 +8,12 @@
 
     <link rel="stylesheet" href="css/style.css">
     <title>Typing Speed</title>
-
-    <script src="https://kit.fontawesome.com/fb0c07e28a.js" crossorigin="anonymous"></script>
 </head>
 <body>
+    <div class="error">
+        <h1>This game is recommended for window with minimal width 1280px.</h1>
+    </div>
+
     <div class="hello">
         <header class="hello__header hello__header--display">Hello in my typing speed app</header>
         <div class="hello__info-wrapper">
@@ -21,8 +23,8 @@
 
         <div class="hello__buttons-wrapper">
             <button class="hello__button hello__button--display btn btn-primary start" type="button">Start</button>
-            <button class="hello__button hello__button--rotate btn-settings" type="button">
-                <i class="fas fa-cog"></i>
+            <button class="hello__button hello__button--rotate btn-settings settings-show" type="button">
+                <img alt="setting_icon" src="setting_icon.svg" />
             </button>
         </div>
     </div>
@@ -48,59 +50,67 @@
         </div>
         <div class="game__keyboard">
             <div class="game__keyboard-line">
-                <button class="game__button game__button-s1" code="Digit1">1</button>
-                <button class="game__button game__button-s1" code="Digit2">2</button>
-                <button class="game__button game__button-s1" code="Digit3">3</button>
-                <button class="game__button game__button-s1" code="Digit4">4</button>
-                <button class="game__button game__button-s1" code="Digit5">5</button>
-                <button class="game__button game__button-s1" code="Digit6">6</button>
-                <button class="game__button game__button-s1" code="Digit7">7</button>
-                <button class="game__button game__button-s1" code="Digit8">8</button>
-                <button class="game__button game__button-s1" code="Digit9">9</button>
-                <button class="game__button game__button-s1" code="Digit0">0</button>
-                <button class="game__button game__button-s1" code="Minus">-</button>
-                <button class="game__button game__button-s1" code="Equal">=</button>
-                <button class="game__button game__button-s25" code="Backspace"><i class="fas fa-backspace"></i></button>
+                <button class="game__button game__button-s1" data-code="Digit1">1</button>
+                <button class="game__button game__button-s1" data-code="Digit2">2</button>
+                <button class="game__button game__button-s1" data-code="Digit3">3</button>
+                <button class="game__button game__button-s1" data-code="Digit4">4</button>
+                <button class="game__button game__button-s1" data-code="Digit5">5</button>
+                <button class="game__button game__button-s1" data-code="Digit6">6</button>
+                <button class="game__button game__button-s1" data-code="Digit7">7</button>
+                <button class="game__button game__button-s1" data-code="Digit8">8</button>
+                <button class="game__button game__button-s1" data-code="Digit9">9</button>
+                <button class="game__button game__button-s1" data-code="Digit0">0</button>
+                <button class="game__button game__button-s1" data-code="Minus">-</button>
+                <button class="game__button game__button-s1" data-code="Equal">=</button>
+                <button class="game__button game__button-s25 font-normal" data-code="Backspace">BackSpace</button>
             </div>
             <div class="game__keyboard-line">
-                <button class="game__button game__button-s1" code="KeyQ">Q</button>
-                <button class="game__button game__button-s1" code="KeyW">W</button>
-                <button class="game__button game__button-s1" code="KeyE">E</button>
-                <button class="game__button game__button-s1" code="KeyR">R</button>
-                <button class="game__button game__button-s1" code="KeyT">T</button>
-                <button class="game__button game__button-s1" code="KeyY">Y</button>
-                <button class="game__button game__button-s1" code="KeyU">U</button>
-                <button class="game__button game__button-s1" code="KeyI">I</button>
-                <button class="game__button game__button-s1" code="KeyO">O</button>
-                <button class="game__button game__button-s1" code="KeyP">P</button>
+                <button class="game__button game__button-s2 font-normal" data-code="Tab">Tab</button>
+                <button class="game__button game__button-s1" data-code="KeyQ">Q</button>
+                <button class="game__button game__button-s1" data-code="KeyW">W</button>
+                <button class="game__button game__button-s1" data-code="KeyE">E</button>
+                <button class="game__button game__button-s1" data-code="KeyR">R</button>
+                <button class="game__button game__button-s1" data-code="KeyT">T</button>
+                <button class="game__button game__button-s1" data-code="KeyY">Y</button>
+                <button class="game__button game__button-s1" data-code="KeyU">U</button>
+                <button class="game__button game__button-s1" data-code="KeyI">I</button>
+                <button class="game__button game__button-s1" data-code="KeyO">O</button>
+                <button class="game__button game__button-s1" data-code="KeyP">P</button>
+                <button class="game__button game__button-s1" data-code="BracketLeft">[</button>
+                <button class="game__button game__button-s1" data-code="BracketRight">]</button>
+                <button class="game__button game__button-s1" data-code="Backslash">\</button>
             </div>
             <div class="game__keyboard-line">
-                <button class="game__button game__button-s15 font-small" code="CapsLock">caps lock</button>
-                <button class="game__button game__button-s1" code="KeyA">A</button>
-                <button class="game__button game__button-s1" code="KeyS">S</button>
-                <button class="game__button game__button-s1" code="KeyD">D</button>
-                <button class="game__button game__button-s1" code="KeyF">F</button>
-                <button class="game__button game__button-s1" code="KeyG">G</button>
-                <button class="game__button game__button-s1" code="KeyH">H</button>
-                <button class="game__button game__button-s1" code="KeyJ">J</button>
-                <button class="game__button game__button-s1" code="KeyK">K</button>
-                <button class="game__button game__button-s1" code="KeyL">L</button>
-                <button class="game__button game__button-s2 font-normal" code="Enter">ENTER</button>
+                <button class="game__button game__button-s15 font-small" data-code="CapsLock">caps lock</button>
+                <button class="game__button game__button-s1" data-code="KeyA">A</button>
+                <button class="game__button game__button-s1" data-code="KeyS">S</button>
+                <button class="game__button game__button-s1" data-code="KeyD">D</button>
+                <button class="game__button game__button-s1" data-code="KeyF">F</button>
+                <button class="game__button game__button-s1" data-code="KeyG">G</button>
+                <button class="game__button game__button-s1" data-code="KeyH">H</button>
+                <button class="game__button game__button-s1" data-code="KeyJ">J</button>
+                <button class="game__button game__button-s1" data-code="KeyK">K</button>
+                <button class="game__button game__button-s1" data-code="KeyL">L</button>
+                <button class="game__button game__button-s1" data-code="Semicolon">;</button>
+                <button class="game__button game__button-s1" data-code="Quote">'</button>
+                <button class="game__button game__button-s2 font-normal" data-code="Enter">ENTER</button>
             </div>
             <div class="game__keyboard-line">
-                <button class="game__button game__button-s2 font-normal" code="ShiftLeft">SHIFT</button>
-                <button class="game__button game__button-s1" code="KeyZ">Z</button>
-                <button class="game__button game__button-s1" code="KeyX">X</button>
-                <button class="game__button game__button-s1" code="KeyC">C</button>
-                <button class="game__button game__button-s1" code="KeyV">V</button>
-                <button class="game__button game__button-s1" code="KeyB">B</button>
-                <button class="game__button game__button-s1" code="KeyN">N</button>
-                <button class="game__button game__button-s1" code="KeyM">M</button>
-                <button class="game__button game__button-s1" code="Comma">,</button>
-                <button class="game__button game__button-s1" code="Period">.</button>
+                <button class="game__button game__button-s2 font-normal" data-code="ShiftLeft">SHIFT</button>
+                <button class="game__button game__button-s1" data-code="KeyZ">Z</button>
+                <button class="game__button game__button-s1" data-code="KeyX">X</button>
+                <button class="game__button game__button-s1" data-code="KeyC">C</button>
+                <button class="game__button game__button-s1" data-code="KeyV">V</button>
+                <button class="game__button game__button-s1" data-code="KeyB">B</button>
+                <button class="game__button game__button-s1" data-code="KeyN">N</button>
+                <button class="game__button game__button-s1" data-code="KeyM">M</button>
+                <button class="game__button game__button-s1" data-code="Comma">,</button>
+                <button class="game__button game__button-s1" data-code="Period">.</button>
+                <button class="game__button game__button-s1" data-code="Slash">/</button>
+                <button class="game__button game__button-s2 font-normal" data-code="ShiftRight">SHIFT</button>
             </div>
             <div class="game__keyboard-line">
-                <button class="game__button game__button-space font-normal" code="Space">space</button>
+                <button class="game__button game__button-space font-normal" data-code="Space">space</button>
             </div>
         </div>
     </div>
@@ -111,20 +121,21 @@
     </header>
     <form class="setting__form">
         <div class="form-example">
-            <label for="time-select">Choose you time:</label>
-            <div>
-                <input id="time-select" name="time-select" type="number" />
-                <span>seconds</span>
-            </div>
-        </div>
-
-        <div class="form-example">
-            <label for="color-select">Choose basic color:</label>
-            <input id="color-select" name="color-select" type="color" />
+            <label for="time-select">
+                Choose you time:
+                <br />
+                <select id="time-select">
+                    <option value="60">1</option>
+                    <option value="120">2</option>
+                    <option value="180">3</option>
+                    <option value="300">5</option>
+                </select>
+                <span>minutes</span>
+            </label>
         </div>
     </form>
     <div class="modal__footer">
-        <button class="btn btn-primary">Play</button>
+        <button class="btn btn-primary start">Play</button>
     </div>
 </div>
 
@@ -133,17 +144,17 @@
             Game Result
         </header>
         <div class="modal__game">
-            <p class="modal__result">Speed: 25 chars / s</p>
-            <p class="modal__result">Accuracy: 89%</p>
-            <p class="modal__result">Correct chars: 89</p>
-            <p class="modal__result">Incorrect chars: 11</p>
-            <p class="modal__result">Total chars: 100</p>
-            <p class="modal__result">Total Time: 60s</p>
+            <p class="modal__result">Speed: 0 chars / s</p>
+            <p class="modal__result">Accuracy: 0%</p>
+            <p class="modal__result">Correct chars: 0</p>
+            <p class="modal__result">Incorrect chars: 0</p>
+            <p class="modal__result">Total chars: 0</p>
+            <p class="modal__result">Total Time: 0</p>
         </div>
         <footer class="modal__footer">
             <button class="btn btn-primary start">Play</button>
-            <button class="hello__button btn-settings">
-                <i class="fas fa-cog"></i>
+            <button class="hello__button btn-settings settings-show" type="button">
+                <img alt="setting_icon" src="setting_icon.svg" />
             </button>
         </footer>
     </div>
