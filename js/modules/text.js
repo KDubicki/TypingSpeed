@@ -5,16 +5,17 @@ const textarea = document.querySelector('textarea')
 const API_URL = 'https://api.quotable.io/random?minLength=60&maxLength=75'
 let rowsLength = []
 let isActive = false
+let currentRow = 0;
 
 const focus = () => textarea.focus();
 
-export const on = () => {
+export const on = async () => {
     clear()
-    for (let i = 0; i < 100; i++) renderNewRow();
+    for (let i = 0; i < 5; i++) await renderNewRow();
     textarea.addEventListener('input', checkerText)
     document.addEventListener('keydown', focus)
     isActive = true;
-    setTimeout(() => focus(), 30);
+    text.querySelector('span').classList.add('bullet');
 }
 
 const clear = () => {
@@ -33,7 +34,6 @@ const renderNewRow = async () => {
 
 const addNewRow = row => {
     text.innerHTML += `<p>
-        <a href="#${rowsLength.length}"></a>
         <span>${[...row].join('</span><span>')}</span>
         <span>
         
@@ -46,6 +46,18 @@ const getRandomQuart = () => {
     return fetch(API_URL)
         .then(response => response.json())
         .then(data => data.content)
+        .catch(randomDefaultText)
+}
+
+const randomDefaultText = () => {
+    const text = [
+        'risus ultricies tristique nulla aliquet',
+        'scelerisque fermentum dui faucibus in ornare',
+        'mauris nunc congue nisi vitae suscipit',
+        'mauris nunc congue nisi vitae suscipit',
+        'erat imperdiet sed'
+    ];
+    return text[Math.floor(Math.random() * 5)];
 }
 
 const checkerText = async () => {
@@ -63,12 +75,25 @@ const checkerText = async () => {
     })
 
     scroll(userText.length);
+    bulletText(characters[userText.length]);
 }
 
-const scroll = len => {
+const bulletText = (ch) => {
+    const handleBullets = text.querySelectorAll('.bullet');
+    handleBullets.forEach((bullet) => bullet.classList.remove('bullet'));
+    ch.classList.add('bullet');
+}
+
+const scroll = async len => {
     let position = 0;
     rowsLength.forEach(row => {
-        if (len >= row) position++;
+        if (len >= row) {
+            position++;
+            if (position > currentRow) {
+                currentRow = position;
+                renderNewRow();
+            }
+        }
     })
 
     text.scroll({
@@ -84,5 +109,5 @@ export const off = () => {
     text.scroll({top: 0});
 }
 
-export const getCorrect = () => text.querySelectorAll('.correct').length;
+export const getCorrects = () => text.querySelectorAll('.correct').length;
 export const getTotal = () => textarea.value.length;

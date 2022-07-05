@@ -35,6 +35,6 @@ const keyUp = e => {
 }
 
 const keyEffect = code => {
-    const button = keyboard.querySelector(`[code="${ code }"]`);
-    if (button) button.classList.remove('game__button--active');
+    const button = keyboard.querySelector(`[data-code="${ code }"]`);
+    if (button) button.classList.toggle('game__button--active');
 }

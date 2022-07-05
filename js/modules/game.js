@@ -2,9 +2,7 @@ import * as timer from './timer.js'
 import * as keyboard from './keyboard.js'
 import * as text from './text.js'
 import * as result from './result.js'
-// import * as setting from './setting.js'
-
-let time = 60;
+import * as setting from './setting.js'
 
 const game = document.querySelector('.game')
 let handlerTimeInterval = null
@@ -18,8 +16,8 @@ const isPlaying = () => {
 export const start = () => {
     if (game.classList.contains('blur')) game.classList.remove('blur');
     game.classList.add('hidden');
-    // setting.hide();
-    preparation();
+    setting.hide();
+    setTimeout(preparation, 500);
 }
 
 const ready = () => {
@@ -31,16 +29,14 @@ const ready = () => {
 
 const preparation = () => {
     const preparations = document.querySelectorAll('.preparation');
-    preparations.forEach((elem, index) => {
-        if (elem.classList.contains('preparation--show')) elem.classList.remove('preparation--show');
-    });
+    preparations.forEach((elem) => elem.classList.remove('preparation--show'));
     preparations.forEach((elem, index) => {
         let timeOut = 1000 * index;
         setTimeout(() => elem.classList.add('preparation--show'), timeOut);
     });
 
-    timer.setTime(time);
     text.on();
+    timer.setTime(setting.getTime());
     setTimeout(ready, 3000);
 }
 
@@ -51,7 +47,7 @@ export const stop = () => {
     game.classList.add('blur');
     result.show({
         total: text.getTotal(),
-        correct: text.getCorrect(),
-        time: time,
+        correct: text.getCorrects(),
+        time: setting.getTime(),
     });
 }
