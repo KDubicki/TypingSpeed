@@ -1,6 +1,4 @@
 .game {
-    /*filter: blur(1rem);*/
-
     height: 90vh;
     width: 80vw;
     font-size: 1.5rem;
@@ -39,16 +37,10 @@
 }
 
 .game__board {
-    /*padding: 1rem;*/
     height: 9rem;
     overflow-y: hidden;
     max-width: 75ch;
     margin: auto;
-
-    /*display: flex;*/
-    /*flex-direction: column;*/
-    /*align-items: center;*/
-    /*justify-content: center;*/
     position: relative;
     z-index: 1;
 }
@@ -115,7 +107,7 @@ textarea {
 }
 
 .game__button {
-    height: calc((70vw / 20));
+    height: 4rem;
 
     color: var(--orange);
     background-color: var(--dark);
@@ -136,37 +128,41 @@ textarea {
 }
 
 .game__button-s05 {
-    width: calc((80vw / 20) / 2);
+    width: 2rem;
 }
 
 .game__button-s1 {
-    width: calc((70vw / 20));
+    width: 4rem;
 }
 
 .game__button-s15 {
-    width: calc((70vw / 20) * 1.5);
+    width: 6rem;
 }
 
 .game__button-s2 {
-    width: calc((70vw / 20) * 2);
+    width: 8rem;
 }
 
 .game__button-s25 {
-    width: calc((70vw / 20) * 2.5);
+    width: 10rem;
 }
 
 .game__button-space{
-    width: calc((70vw / 20) * 4);
+    width: 30rem;
+}
+
+.game__text .bullet {
+    border-bottom: 0.2rem solid white;
 }
 
 .correct {
     color: white !important;
-    font-size: calc(1em + 2px);
+    font-size: calc(1em + 1px);
 }
 
 .incorrect {
     color: red !important;
-    font-size: calc(1em + 2px);
+    font-size: calc(1em + 1px);
 }
 
 .blur {

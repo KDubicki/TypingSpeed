@@ -51,7 +51,7 @@
 }
 
 .hello__info--display {
-    animation: hello__slide-to-left 0.7s linear;
+    animation: hello__slide-to-left 0.7s ease;
 }
 
 .hello__buttons-wrapper {
@@ -67,9 +67,9 @@
 }
 
 .hello__button--display {
-    animation: hello__slide-to-top 1s linear;
+    animation: hello__slide-to-top 1s ease;
 }
 
 .hello__button--rotate {
-    animation: hello__btn-setting 1.4s linear;
+    animation: hello__btn-setting 1.4s ease;
 }
