@@ -4,7 +4,6 @@ const textarea = document.querySelector('textarea')
 
 const API_URL = 'https://api.quotable.io/random?minLength=60&maxLength=75'
 let rowsLength = []
-let isActive = false
 let currentRow = 0;
 
 const focus = () => textarea.focus();
@@ -14,11 +13,11 @@ export const on = async () => {
     for (let i = 0; i < 5; i++) await renderNewRow();
     textarea.addEventListener('input', checkerText)
     document.addEventListener('keydown', focus)
-    isActive = true;
     text.querySelector('span').classList.add('bullet');
 }
 
 const clear = () => {
+    currentRow = 0;
     rowsLength = []
     text.innerText = textarea.value = ''
     board.value = null
@@ -61,8 +60,6 @@ const randomDefaultText = () => {
 }
 
 const checkerText = async () => {
-    if (!isActive) return;
-
     const characters = text.querySelectorAll('span');
     const userText = textarea.value;
     characters.forEach((ch, index) => {
@@ -74,7 +71,7 @@ const checkerText = async () => {
         }
     })
 
-    scroll(userText.length);
+    await scroll(userText.length);
     bulletText(characters[userText.length]);
 }
 
@@ -103,7 +100,6 @@ const scroll = async len => {
 }
 
 export const off = () => {
-    isActive = false;
     textarea.removeEventListener('input', checkerText);
     document.removeEventListener('keydown', focus);
     text.scroll({top: 0});
